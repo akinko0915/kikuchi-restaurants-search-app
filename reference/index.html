@@ -15,12 +15,45 @@
     <h1>菊池グルメを堪能したい🍔</h1>
     <div class="search-form">
       <div class="input-group">
+        <label for="genre">飲食店名</label>
+        <input type="text" id="restaurant_name" />
+      </div>
+      <div class="input-group">
         <label for="area">エリア</label>
         <input type="text" id="area" placeholder="例: 隈府" />
       </div>
       <div class="input-group">
-        <label for="genre">ジャンル</label>
-        <input type="text" id="genre" placeholder="例: ラーメン, カフェ" />
+        <label for="genre-select">ジャンル</label>
+        <select id="genre-select">
+          <option value="">-- 選択してください --</option>
+          <option value="居酒屋">居酒屋</option>
+          <option value="ダイニングバー・バル">ダイニングバー・バル</option>
+          <option value="創作料理">創作料理</option>
+          <option value="和食">和食</option>
+          <option value="洋食">洋食</option>
+          <option value="イタリアン・フレンチ">イタリアン・フレンチ</option>
+          <option value="中華">中華</option>
+          <option value="焼肉・ホルモン">焼肉・ホルモン</option>
+          <option value="韓国料理">韓国料理</option>
+          <option value="アジア・エスニック料理">アジア・エスニック料理</option>
+          <option value="各国料理">各国料理</option>
+          <option value="カラオケ・パーティ">カラオケ・パーティ</option>
+          <option value="バー・カクテル">バー・カクテル</option>
+          <option value="ラーメン">ラーメン</option>
+          <option value="お好み焼き・もんじゃ">お好み焼き・もんじゃ</option>
+          <option value="カフェ・スイーツ">カフェ・スイーツ</option>
+          <option value="その他グルメ">その他グルメ</option>
+        </select>
+      </div>
+      <div class="input-group checkbox-group">
+        <label>
+          <input type="checkbox" id="all-you-can-eat" />
+          食べ放題
+        </label>
+        <label>
+          <input type="checkbox" id="all-you-can-drink" />
+          飲み放題
+        </label>
       </div>
     </div>
     <button id="searchButton">検索</button>

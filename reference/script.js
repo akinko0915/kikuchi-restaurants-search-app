@@ -1,17 +1,17 @@
-const area = document.getElementById("area");
-const genre = document.getElementById("genre");
+const areaInput = document.getElementById("area");
+const genreSelect = document.getElementById("genre-select");
+const restaurantNameInput = document.getElementById("restaurant_name");
 const button = document.getElementById("searchButton");
 const result = document.getElementById("results");
 
-url = "http://127.0.0.1:3000/api/v1/restaurants";
-getRestaurants = async (area, genre) => {
-  try {
-    const query = `?area=${encodeURIComponent(area)}&genre=${encodeURIComponent(
-      genre
-    )}`;
-    const response = await fetch(url + query);
+const url = "http://127.0.0.1:3000/api/v1/restaurants";
 
-    if (!response.ok) throw new Error("HTTP error" + response.status);
+const getRestaurants = async (params) => {
+  try {
+    const query = new URLSearchParams(params).toString();
+    const response = await fetch(`${url}?${query}`);
+
+    if (!response.ok) throw new Error("HTTP error " + response.status);
 
     return await response.json();
   } catch (error) {
@@ -21,7 +21,21 @@ getRestaurants = async (area, genre) => {
 };
 
 button.addEventListener("click", () => {
-  getRestaurants(area.value, genre.value).then((restaurants) => {
+  const area = areaInput.value;
+  const genre = genreSelect.value;
+  const restaurantName = restaurantNameInput.value;
+  const isAllYouCanEat = document.getElementById("all-you-can-eat").checked;
+  const isAllYouCanDrink = document.getElementById("all-you-can-drink").checked;
+
+  const searchParams = {
+    area,
+    genre,
+    restaurant_name: restaurantName,
+    all_you_can_eat: isAllYouCanEat,
+    all_you_can_drink: isAllYouCanDrink,
+  };
+
+  getRestaurants(searchParams).then((restaurants) => {
     result.innerHTML = "";
     restaurants.forEach((restaurant, index) => {
       const shopDiv = document.createElement("div");

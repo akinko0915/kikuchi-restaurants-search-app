@@ -36,12 +36,38 @@ h1 {
   font-size: 1rem;
 }
 
-.input-group input {
+.input-group input:not([type="checkbox"]) {
   width: 380px;
   height: 2rem;
   border: 0.2rem solid black;
   font-size: 1rem;
   padding-left: 10px;
+}
+
+.input-group select {
+  width: 380px;
+  height: 2.3rem;
+  border: 0.2rem solid black;
+  font-size: 1rem;
+  padding-left: 10px;
+  font-family: "Kiwi Maru", serif;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.checkbox-group label {
+  font-size: 1rem;
+  font-family: "Kiwi Maru", serif;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 button {
