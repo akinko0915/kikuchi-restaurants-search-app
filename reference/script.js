@@ -22,16 +22,20 @@ getRestaurants = async (area, genre) => {
 
 button.addEventListener("click", () => {
   getRestaurants(area.value, genre.value).then((restaurants) => {
-    result.innerText = "";
+    result.innerHTML = "";
     restaurants.forEach((restaurant, index) => {
-      result.innerText += `レストラン ${index + 1}:\n`;
-      result.innerText += `名前: ${restaurant.name}\n`;
-      result.innerText += `住所: ${restaurant.address}\n`;
-      result.innerText += `エリア: ${restaurant.area.name}\n`;
-      result.innerText += `ジャンル: ${restaurant.genres
+      const shopDiv = document.createElement("div");
+      shopDiv.className = "shop";
+      shopDiv.innerHTML = `
+        <div>
+          ${restaurant.area.name} | ${restaurant.genres
         .map((g) => g.name)
-        .join("、")}\n`;
-      result.innerText += "------\n";
+        .join("、")}
+        </div>
+        <div class="restaurant_name">${restaurant.name}</div>
+        <div><strong>住所:</strong> ${restaurant.address}</div>
+      `;
+      result.appendChild(shopDiv);
     });
   });
 });
