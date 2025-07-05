@@ -33,8 +33,15 @@ button.addEventListener("click", () => {
 
   getRestaurants(searchParams).then((restaurants) => {
     result.innerHTML = "";
-    restaurants.forEach((restaurant, index) => {
-      console.log(restaurant);
+
+    if (restaurants.length === 0) {
+      const messageDiv = document.createElement("div");
+      messageDiv.className = "no-results";
+      messageDiv.textContent = "該当する飲食店はありません";
+      result.appendChild(messageDiv);
+      return;
+    }
+    restaurants.forEach((restaurant) => {
       const shopDiv = document.createElement("div");
       shopDiv.className = "shop";
       shopDiv.innerHTML = `
