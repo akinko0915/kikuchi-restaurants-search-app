@@ -34,12 +34,20 @@ button.addEventListener("click", () => {
   getRestaurants(searchParams).then((restaurants) => {
     result.innerHTML = "";
     restaurants.forEach((restaurant, index) => {
+      console.log(restaurant);
       const shopDiv = document.createElement("div");
       shopDiv.className = "shop";
       shopDiv.innerHTML = `
-          ${restaurant.area.name} | ${restaurant.genre.name}
+        <div>${restaurant.area.name} | ${restaurant.genre.name}</div>
         <div class="restaurant_name">${restaurant.name}</div>
-      `;
+    `;
+
+      shopDiv.addEventListener("click", () => {
+        if (restaurant.map_link) {
+          window.open(restaurant.map_link, "_blank", "noopener");
+        }
+      });
+
       result.appendChild(shopDiv);
     });
   });

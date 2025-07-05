@@ -100,10 +100,20 @@ button:hover {
   padding: 20px;
   text-align: left;
   font-size: 1rem;
+  color: black;
+}
+
+.shop {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.shop:hover {
+  background-color: black;
+  color: white;
 }
 
 .restaurant_name {
-  color: black;
   font-weight: bold;
   font-size: 1.5rem;
 }
