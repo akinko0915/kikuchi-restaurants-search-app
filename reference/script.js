@@ -1,5 +1,5 @@
-const areaInput = document.getElementById("area");
-const genreSelect = document.getElementById("genre-select");
+const areaSelect = document.getElementById("area");
+const genreSelect = document.getElementById("genre");
 const restaurantNameInput = document.getElementById("restaurant_name");
 const button = document.getElementById("searchButton");
 const result = document.getElementById("results");
@@ -21,18 +21,14 @@ const getRestaurants = async (params) => {
 };
 
 button.addEventListener("click", () => {
-  const area = areaInput.value;
-  const genre = genreSelect.value;
   const restaurantName = restaurantNameInput.value;
-  const isAllYouCanEat = document.getElementById("all-you-can-eat").checked;
-  const isAllYouCanDrink = document.getElementById("all-you-can-drink").checked;
+  const area = areaSelect.value;
+  const genre = genreSelect.value;
 
   const searchParams = {
-    area,
-    genre,
+    area: area,
+    genre: genre,
     restaurant_name: restaurantName,
-    all_you_can_eat: isAllYouCanEat,
-    all_you_can_drink: isAllYouCanDrink,
   };
 
   getRestaurants(searchParams).then((restaurants) => {
@@ -41,13 +37,8 @@ button.addEventListener("click", () => {
       const shopDiv = document.createElement("div");
       shopDiv.className = "shop";
       shopDiv.innerHTML = `
-        <div>
-          ${restaurant.area.name} | ${restaurant.genres
-        .map((g) => g.name)
-        .join("、")}
-        </div>
+          ${restaurant.area.name} | ${restaurant.genre.name}
         <div class="restaurant_name">${restaurant.name}</div>
-        <div><strong>住所:</strong> ${restaurant.address}</div>
       `;
       result.appendChild(shopDiv);
     });

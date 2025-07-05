@@ -15,16 +15,33 @@
     <h1>菊池グルメを堪能したい🍔</h1>
     <div class="search-form">
       <div class="input-group">
-        <label for="genre">飲食店名</label>
+        <label for="restaurant_name">飲食店名</label>
         <input type="text" id="restaurant_name" />
       </div>
       <div class="input-group">
-        <label for="area">エリア</label>
-        <input type="text" id="area" placeholder="例: 隈府" />
+        <label for="area-select">エリア</label>
+        <select id="area" name="area">
+          <option value="">-- 選択してください --</option>
+          <option value="隈府">隈府</option>
+          <option value="重味">重味</option>
+          <option value="七城町">七城町</option>
+          <option value="北宮">北宮</option>
+          <option value="大琳寺">大琳寺</option>
+          <option value="長田">長田</option>
+          <option value="野間口">野間口</option>
+          <option value="西寺">西寺</option>
+          <option value="今">今</option>
+          <option value="泗水町">泗水町</option>
+          <option value="四町分">四町分</option>
+          <option value="亘">亘</option>
+          <option value="森北">森北</option>
+          <option value="龍門">龍門</option>
+          <option value="豊間">豊間</option>
+        </select>
       </div>
       <div class="input-group">
         <label for="genre-select">ジャンル</label>
-        <select id="genre-select">
+        <select id="genre">
           <option value="">-- 選択してください --</option>
           <option value="居酒屋">居酒屋</option>
           <option value="ダイニングバー・バル">ダイニングバー・バル</option>
@@ -44,16 +61,6 @@
           <option value="カフェ・スイーツ">カフェ・スイーツ</option>
           <option value="その他グルメ">その他グルメ</option>
         </select>
-      </div>
-      <div class="input-group checkbox-group">
-        <label>
-          <input type="checkbox" id="all-you-can-eat" />
-          食べ放題
-        </label>
-        <label>
-          <input type="checkbox" id="all-you-can-drink" />
-          飲み放題
-        </label>
       </div>
     </div>
     <button id="searchButton">検索</button>
