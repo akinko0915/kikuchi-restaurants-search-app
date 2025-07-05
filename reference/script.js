@@ -4,7 +4,7 @@ const restaurantNameInput = document.getElementById("restaurant_name");
 const button = document.getElementById("searchButton");
 const result = document.getElementById("results");
 
-const url = "http://127.0.0.1:3000/api/v1/restaurants";
+const url = "https://kikuchi-restaurants-api.onrender.com/api/v1/restaurants";
 
 const getRestaurants = async (params) => {
   try {
