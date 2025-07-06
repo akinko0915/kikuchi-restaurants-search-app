@@ -4,6 +4,7 @@
   font-style: bold;
 }
 
+/* background-color */
 body {
   font-family: "Kiwi Maru", serif;
   text-align: center;
@@ -11,6 +12,7 @@ body {
   background-color: #ffde59;
 }
 
+/* font-size */
 h1 {
   font-size: 3rem;
 }
@@ -70,6 +72,7 @@ h1 {
   gap: 5px;
 }
 
+/* 検索ボタン */
 button {
   background-color: black;
   color: white;
