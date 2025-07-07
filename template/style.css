@@ -4,14 +4,14 @@
   font-style: bold;
 }
 
-/* background-color */
+/* background-color追加してみよう */
 body {
   font-family: "Kiwi Maru", serif;
   text-align: center;
   padding: 20px;
 }
 
-/* font-size */
+/* font-size (3rem)を追加してみよう */
 h1 {
 }
 
