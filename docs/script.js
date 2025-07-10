@@ -42,7 +42,6 @@ button.addEventListener("click", () => {
     restaurants.forEach((restaurant) => {
       const shopDiv = document.createElement("div");
       shopDiv.className = "shop";
-      // console.log(restaurant.id);
       shopDiv.innerHTML = `
         <div>${restaurant.area.name} | ${restaurant.genre.name}</div>
         <div class="restaurant_name">${restaurant.name}</div>
