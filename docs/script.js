@@ -1,6 +1,5 @@
 const areaSelect = document.getElementById("area");
 const genreSelect = document.getElementById("genre");
-const restaurantNameInput = document.getElementById("restaurant_name");
 const button = document.getElementById("searchButton");
 const result = document.getElementById("results");
 
@@ -21,14 +20,12 @@ const getRestaurants = async (params) => {
 };
 
 button.addEventListener("click", () => {
-  const restaurantName = restaurantNameInput.value;
   const area = areaSelect.value;
   const genre = genreSelect.value;
 
   const searchParams = {
     area: area,
     genre: genre,
-    restaurant_name: restaurantName,
   };
 
   getRestaurants(searchParams).then((restaurants) => {
@@ -41,6 +38,7 @@ button.addEventListener("click", () => {
       result.appendChild(messageDiv);
       return;
     }
+
     restaurants.forEach((restaurant) => {
       const shopDiv = document.createElement("div");
       shopDiv.className = "shop";
@@ -49,13 +47,11 @@ button.addEventListener("click", () => {
         <div class="restaurant_name">${restaurant.name}</div>
     `;
 
-      shopDiv.addEventListener("click", () => {
-        if (restaurant.map_link) {
-          window.open(restaurant.map_link, "_blank", "noopener");
-        }
-      });
-
       result.appendChild(shopDiv);
+
+      shopDiv.addEventListener("click", () => {
+        window.open(restaurant.map_link);
+      });
     });
   });
 });

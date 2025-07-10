@@ -1,0 +1,116 @@
+.kiwi-maru-regular {
+  font-family: "Kiwi Maru", serif;
+  font-weight: 400;
+  font-style: bold;
+}
+
+/* background-color追加してみよう */
+body {
+  font-family: "Kiwi Maru", serif;
+  text-align: center;
+  padding: 20px;
+}
+
+/* font-size (3rem)を追加してみよう */
+h1 {
+}
+
+.search-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 820px;
+  margin: 0 auto 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: black;
+  font-size: 1rem;
+}
+
+.input-group input:not([type="checkbox"]) {
+  width: 380px;
+  height: 2rem;
+  border: 0.2rem solid black;
+  font-size: 1rem;
+  padding-left: 10px;
+}
+
+.input-group select {
+  width: 380px;
+  height: 2.3rem;
+  border: 0.2rem solid black;
+  font-size: 1rem;
+  padding-left: 10px;
+  font-family: "Kiwi Maru", serif;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.checkbox-group label {
+  font-size: 1rem;
+  font-family: "Kiwi Maru", serif;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* 検索ボタン */
+/* background-color, color, height(2rem), width(100px) */
+button {
+  font-family: "Kiwi Maru", serif;
+}
+
+/* background-color, color */
+button:hover {
+}
+
+#results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+  padding: 10px;
+}
+
+.shop {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  text-align: left;
+  font-size: 1rem;
+  color: black;
+}
+
+.shop {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.shop:hover {
+  background-color: black;
+  color: white;
+}
+
+.restaurant_name {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
