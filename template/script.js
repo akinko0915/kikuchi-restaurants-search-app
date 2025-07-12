@@ -1,7 +1,7 @@
 const areaSelect = document.getElementById("area");
 const genreSelect = document.getElementById("genre");
 const button = document.getElementById("searchButton");
-/** resultという名前で、HTMLの要素を取得しよう **/
+/** resultsという名前で、HTMLの要素を取得しよう **/
 
 // ここで、APIから取得できるデータを確認する
 const url = "https://kikuchi-restaurants-api.onrender.com/api/v1/restaurants";
@@ -43,9 +43,9 @@ button.addEventListener("click", () => {
 
     // 取得したデータがなかったときの処理
     if (restaurants.length === 0) {
-      /* step1: HTML要素を作る*/
-      /* step2: 作ったHTML要素に名前をつける*/
-      /* step３: 作ったHTML要素に取得した値を入れる*/
+      /* step1: messageDivという名前でHTML要素を作る*/
+      /* step2: 作ったHTML要素に"no-results"というクラスの名前をつける*/
+      /* step３: 作ったHTML要素にtextContentというメソッドを使って"該当する飲食店はありません"を代入する*/
       /* step4: 作ったHTML要素をオリジナルのHTML要素に挿入する*/
       return;
     }
@@ -53,21 +53,11 @@ button.addEventListener("click", () => {
     // 取得したデータを表示する処理
     restaurants.forEach((restaurant) => {
       /* step1: HTML要素を作る*/
-      const shopDiv = document.createElement("div");
-
-      /* step2: 作ったHTML要素に名前をつける*/
-      shopDiv.className = "shop";
-
-      /* step３: 作ったHTML要素に取得した値を入れる*/
-      shopDiv.innerHTML = `
-        <div>${restaurant.area.name} | ${restaurant.genre.name}</div>
-        <div class="restaurant_name">${restaurant.name}</div>
-    `;
-
+      /* step2: 作ったHTML要素に"shop"というクラスの名前をつける*/
+      /* step３: 作ったHTML要素にinnerHTMLというメソッドを使って取得した値を入れる*/
       /* step4: 作ったHTML要素をオリジナルのHTML要素に挿入する*/
-      result.appendChild(shopDiv);
-
       /* お店がクリックされた時の処理を書いてみよう */
+      // ヒント： 別タブでURLを開くメソッド: window.open(<url>)
     });
   });
 });

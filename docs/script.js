@@ -1,7 +1,7 @@
 const areaSelect = document.getElementById("area");
 const genreSelect = document.getElementById("genre");
 const button = document.getElementById("searchButton");
-const result = document.getElementById("results");
+const results = document.getElementById("results");
 
 const url = "https://kikuchi-restaurants-api.onrender.com/api/v1/restaurants";
 
@@ -29,13 +29,13 @@ button.addEventListener("click", () => {
   };
 
   getRestaurants(searchParams).then((restaurants) => {
-    result.innerHTML = "";
+    results.innerHTML = "";
 
     if (restaurants.length === 0) {
       const messageDiv = document.createElement("div");
       messageDiv.className = "no-results";
       messageDiv.textContent = "該当する飲食店はありません";
-      result.appendChild(messageDiv);
+      results.appendChild(messageDiv);
       return;
     }
 
@@ -47,7 +47,7 @@ button.addEventListener("click", () => {
         <div class="restaurant_name">${restaurant.name}</div>
     `;
 
-      result.appendChild(shopDiv);
+      results.appendChild(shopDiv);
 
       shopDiv.addEventListener("click", () => {
         window.open(restaurant.map_link);
